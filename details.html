@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="product.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+				
+				var qty=10;
+				function change_quantity()
+				{
+					
+					qty=qty-1;
+					document.getElementById("qty").innerHTML=qty;
+					if(qty==0)
+					{
+						 
+						 document.getElementById("myBtn").disabled = true;
+					}
+				}
+				setTimeout(function(){ document.getElementById("myBtn").disabled = true;},120000);
+</script>
+
+  </head>
+  <body style="background-color:#a9a9a9">
+
+  	<nav class="navbar navbar-inverse navbar-fixed-top">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="#">Product-XYZ</a>
+    		</div>
+    	<ul class="nav navbar-nav">
+      		<li class="active"><a href="#">Home</a></li>
+      		<li><a href="#">Page 1</a></li>
+      		<li><a href="#">Page 2</a></li>
+      		<li><a href="#">Page 3</a></li>
+    	</ul>
+  		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row" style="margin-top: 150px">
+			<div class="col-md-4">
+			<img src="iphone.jpg" class="img-rounded" alt="Iphones" height="400" width="550">
+			</div>
+			<div class="col-md-8">
+
+				<div class="row">
+				<p id="demo"></p>
+        		<script>
+        			function date_time()
+        			{
+          				var dt = new Date();
+          				document.getElementById("demo").innerHTML = dt;
+          				setTimeout(function(){ date_time(); }, 1000);
+       				}
+        		date_time();
+        		</script>
+				</div>
+				<div class="row">
+				<h1 style="margin-left: 20%">Product Quantity:</h1>
+				<p id="qty" style="margin-left: 60%; font-size: 80px;">10</p>
+				</div>
+				<div class="row" style="padding-top: 150px; padding-left: 400px;">
+				<button type="button" class="btn btn-primary btn-lg" id="myBtn" onclick="change_quantity()" style="width: 200px">Buy Now</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
